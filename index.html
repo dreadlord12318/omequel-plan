@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Omequel Santiago — Website & SEO Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700;800&display=swap">
+<style>
+:root{
+  --navy:#0B1335;--navy2:#1A2244;--ink:#3A4160;--gold:#D3AE34;--gold2:#E5C862;--sand:#a58a56;
+  --sea:#2f8f9d;--seafoam:#e6f3f1;--cream:#faf7ef;--line:#E3E5EC;--white:#fff;
+  --display:"Cormorant Garamond",Georgia,serif;--body:"Nunito Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--navy);background:var(--cream);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.slide{min-height:100vh;scroll-snap-align:start;position:relative;display:flex;align-items:center;padding:90px 7vw 70px;overflow:hidden}
+.slide.dark{background:var(--navy);color:#fff}
+.slide.sea{background:linear-gradient(160deg,#0B1335 0%,#123a4d 60%,#1d6470 100%);color:#fff}
+.wrap{width:100%;max-width:1180px;margin:0 auto;position:relative;z-index:2}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08}
+h1{font-size:clamp(46px,7vw,96px)}
+h2{font-size:clamp(36px,4.6vw,62px);margin:14px 0 22px}
+h3{font-size:26px;margin-bottom:8px}
+.lead{font-size:clamp(18px,1.6vw,22px);max-width:760px;opacity:.88}
+.gold{color:var(--gold)}
+.muted{opacity:.72}
+/* reveal animation */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.in .rv{opacity:1;transform:none}
+.in .rv:nth-child(2){transition-delay:.12s}.in .rv:nth-child(3){transition-delay:.24s}.in .rv:nth-child(4){transition-delay:.36s}
+.in .rv:nth-child(5){transition-delay:.48s}.in .rv:nth-child(6){transition-delay:.6s}.in .rv:nth-child(7){transition-delay:.72s}.in .rv:nth-child(8){transition-delay:.84s}
+/* nav */
+.bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));z-index:20;width:0;transition:width .3s}
+.dots{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:10px}
+.dots a{width:10px;height:10px;border-radius:50%;background:rgba(150,150,170,.45);display:block;transition:all .3s}
+.dots a.on{background:var(--gold);transform:scale(1.4)}
+.brand{position:fixed;top:18px;left:7vw;z-index:20;font-weight:800;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);mix-blend-mode:normal}
+.keys{position:fixed;bottom:18px;right:22px;z-index:20;font-size:12px;opacity:.55}
+/* cover */
+.cover h1 span{display:block;font-style:italic;color:var(--gold2)}
+.waves{position:absolute;inset:auto 0 0 0;height:38vh;z-index:1;opacity:.5}
+.waves path{animation:drift 14s ease-in-out infinite alternate}
+.waves path:nth-child(2){animation-duration:19s;animation-direction:alternate-reverse}
+@keyframes drift{from{transform:translateX(-4%)}to{transform:translateX(4%)}}
+.sun{position:absolute;right:-3vw;top:8vh;width:min(28vw,340px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 40%,#f3dc8c,#D3AE34 55%,rgba(211,174,52,0) 72%);opacity:.32;animation:glow 6s ease-in-out infinite alternate;z-index:1}
+@keyframes glow{to{transform:scale(1.08);opacity:.45}}
+.prep{margin-top:44px;display:flex;gap:40px;flex-wrap:wrap;font-size:15px}
+.prep b{display:block;color:var(--gold);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+/* cards */
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 14px 40px rgba(11,19,53,.07);transition:transform .35s,box-shadow .35s}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(11,19,53,.13)}
+.dark .card,.sea .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);box-shadow:none;color:#fff}
+.stat{font-family:var(--display);font-size:56px;font-weight:600;color:var(--gold);line-height:1}
+.tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--seafoam);color:#1d6470;margin-bottom:12px}
+.tag.hard{background:#fbeee0;color:#9a5a10}.tag.med{background:#fdf6dc;color:#8a6d0b}
+.ico{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.ico svg{width:24px;height:24px;stroke:var(--navy);fill:none;stroke-width:2}
+ul.clean{list-style:none}
+ul.clean li{padding:7px 0 7px 28px;position:relative}
+ul.clean li::before{content:"";position:absolute;left:0;top:15px;width:14px;height:2px;background:var(--gold)}
+/* keyword table */
+.kw{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.kw .card h3{font-size:24px}
+.kw .q{font-size:15px;padding:6px 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;gap:10px}
+.kw .q:last-child{border:0}
+.kw .q i{font-style:normal;font-size:11px;font-weight:800;padding:2px 8px;border-radius:99px;white-space:nowrap;align-self:center}
+.e{background:var(--seafoam);color:#1d6470}.m{background:#fdf6dc;color:#8a6d0b}.h{background:#fbeee0;color:#9a5a10}
+/* sitemap */
+.tree{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:10px}
+.node{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:14px;padding:18px}
+.node h4{font-family:var(--display);font-size:22px;margin-bottom:6px}
+.node p{font-size:14px;color:var(--ink)}
+.home-node{grid-column:1/-1;text-align:center;background:var(--navy);color:#fff;border-top-color:var(--gold2)}
+.home-node p{color:#d8dbea}
+/* listing cards */
+.prop{padding:0;overflow:hidden}
+.prop .ph{height:150px;position:relative;background:linear-gradient(135deg,#1d6470,#0B1335)}
+.prop .ph svg{position:absolute;inset:0;width:100%;height:100%}
+.prop .ph .badge{position:absolute;left:14px;top:14px;background:var(--gold);color:var(--navy);font-weight:800;font-size:12px;padding:4px 10px;border-radius:99px}
+.prop .bd{padding:20px 22px}
+.prop .price{font-family:var(--display);font-size:30px;font-weight:600;color:var(--navy)}
+.prop .meta{font-size:14px;color:var(--ink)}
+/* mockup */
+.mock{background:#fff;border-radius:16px;box-shadow:0 40px 80px rgba(0,0,0,.35);overflow:hidden;transform:perspective(1400px) rotateY(-9deg) rotateX(3deg);transition:transform .8s}
+.mock:hover{transform:none}
+.mock .chrome{height:30px;background:#eceef4;display:flex;align-items:center;gap:6px;padding:0 12px}
+.mock .chrome i{width:10px;height:10px;border-radius:50%;background:#c9cedf}
+.mock .hero{height:220px;background:linear-gradient(180deg,rgba(11,19,53,.15),rgba(11,19,53,.75)),linear-gradient(120deg,#2f8f9d,#0B1335);display:flex;flex-direction:column;justify-content:flex-end;padding:22px;color:#fff}
+.mock .hero b{font-family:var(--display);font-size:30px;line-height:1.05}
+.mock .hero small{color:var(--gold2);font-weight:800;letter-spacing:.14em;font-size:10px;text-transform:uppercase}
+.mock .search{margin:-18px 18px 0;position:relative;background:#fff;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.15);display:flex;gap:8px;padding:10px;font-size:11px;color:#3A4160}
+.mock .search span{flex:1;border:1px solid var(--line);border-radius:6px;padding:6px}
+.mock .search em{font-style:normal;background:var(--gold);color:var(--navy);font-weight:800;border-radius:6px;padding:6px 12px}
+.mock .row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:18px}
+.mock .row div{height:70px;border-radius:8px;background:linear-gradient(135deg,#e6f3f1,#cfe3e1)}
+.swatch{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.swatch div{width:64px;height:64px;border-radius:14px;display:flex;align-items:flex-end;padding:6px;font-size:10px;font-weight:800;box-shadow:0 6px 16px rgba(0,0,0,.2)}
+/* timeline */
+.tl{position:relative;margin-top:24px}
+.tl::before{content:"";position:absolute;left:0;right:0;top:27px;height:3px;background:rgba(255,255,255,.15)}
+.tl .fill{position:absolute;left:0;top:27px;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width 2.2s cubic-bezier(.3,.6,.2,1)}
+.in .tl .fill{width:100%}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;position:relative}
+.step .dot{width:56px;height:56px;border-radius:50%;background:var(--navy);border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:22px;font-weight:600;color:var(--gold2);margin-bottom:16px}
+.step b{display:block;color:var(--gold2);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.step h3{font-size:22px;margin:4px 0 8px}
+.step p{font-size:14px;opacity:.85}
+/* budget */
+.price-table{background:#fff;border-radius:20px;border:1px solid var(--line);overflow:hidden;box-shadow:0 20px 50px rgba(11,19,53,.08)}
+.pt-row{display:grid;grid-template-columns:1.4fr 2fr 1fr;gap:18px;padding:15px 28px;border-bottom:1px solid var(--line);align-items:center}
+.pt-row:last-child{border:0}
+.pt-row.head{background:var(--navy);color:#fff;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.pt-row.total{background:var(--cream)}
+.pt-row .amt{font-family:var(--display);font-size:28px;font-weight:600;text-align:right}
+.pt-row small{display:block;color:var(--ink);font-size:13px}
+.pay{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
+.pay .card{border-left:5px solid var(--gold)}
+.pay .big{font-family:var(--display);font-size:46px;font-weight:600;color:var(--navy)}
+.note{font-size:13px;opacity:.7;margin-top:14px}
+.cta{display:inline-block;margin-top:30px;background:linear-gradient(90deg,var(--gold),var(--gold2));color:var(--navy);font-weight:800;padding:16px 30px;border-radius:99px;text-decoration:none;letter-spacing:.04em;box-shadow:0 12px 30px rgba(211,174,52,.35);transition:transform .3s}
+.cta:hover{transform:translateY(-3px)}
+@media(max-width:1000px){.g3,.g4,.kw,.tree,.steps{grid-template-columns:1fr 1fr}.g2,.pay{grid-template-columns:1fr}.pt-row{grid-template-columns:1fr;gap:4px}.pt-row .amt{text-align:left}.dots{display:none}}
+@media(max-width:620px){.keys{display:none}.g3,.g4,.kw,.tree,.steps{grid-template-columns:1fr}.slide{padding:80px 20px 60px}html{scroll-snap-type:none}.mock{transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+/* website mode */
+html{scroll-snap-type:none!important;scroll-padding-top:74px}
+.slide{min-height:auto;scroll-snap-align:none;padding:104px 7vw 78px}
+.slide.cover{min-height:92vh}
+.dots,.keys,.brand{display:none!important}
+.top{position:fixed;top:0;left:0;right:0;z-index:30;background:rgba(11,19,53,.94);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;gap:18px;padding:0 4vw;height:62px;box-shadow:0 4px 20px rgba(0,0,0,.18)}
+.top .logo{font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);white-space:nowrap;text-decoration:none}
+.top nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;justify-content:flex-end}
+.top nav::-webkit-scrollbar{display:none}
+.top nav a{color:#d8dbea;text-decoration:none;font-size:14px;font-weight:700;padding:8px 11px;border-radius:99px;white-space:nowrap;transition:background .2s,color .2s}
+.top nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.top nav a.on{background:var(--gold);color:var(--navy)}
+.menu-btn{display:none;margin-left:auto;background:var(--gold);color:var(--navy);border:0;border-radius:99px;font:800 14px var(--body);padding:9px 16px;cursor:pointer}
+.bar{top:62px!important;z-index:31}
+.simple{grid-column:1/-1;margin-top:34px;display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-left:5px solid var(--sea);border-radius:16px;padding:20px 22px;box-shadow:0 10px 30px rgba(11,19,53,.06);color:var(--navy)}
+.simple .i{flex:0 0 38px;height:38px;border-radius:50%;background:#e6f3f1;color:#1d6470;display:flex;align-items:center;justify-content:center;font:800 18px var(--display)}
+.simple b.t{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#1d6470;margin-bottom:4px}
+.simple p{margin:0;font-size:16px;line-height:1.65}
+.dark .simple,.sea .simple{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);border-left-color:var(--gold2);color:#fff;box-shadow:none}
+.dark .simple b.t,.sea .simple b.t{color:var(--gold2)}
+.dark .simple .i,.sea .simple .i{background:rgba(229,200,98,.18);color:var(--gold2)}
+.next{grid-column:1/-1;display:flex;justify-content:flex-end;margin-top:26px}
+.next a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;color:var(--navy);background:var(--gold);padding:13px 22px;border-radius:99px;box-shadow:0 10px 24px rgba(211,174,52,.3);transition:transform .25s}
+.next a:hover{transform:translateY(-2px)}
+.next a span{font-size:18px}
+.howto{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.howto .cta{margin-top:0}
+.howto small{opacity:.8;font-size:15px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;box-shadow:0 6px 18px rgba(11,19,53,.05)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;font-weight:800;font-size:17px;color:var(--navy)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:0 0 32px;height:32px;border-radius:50%;background:var(--cream);color:var(--sand);font-size:22px;line-height:32px;text-align:center;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg);background:var(--gold);color:var(--navy)}
+.faq details p{padding:0 22px 20px;margin:0;color:var(--ink);font-size:16px;line-height:1.7}
+.faq h3{font-size:22px;margin:28px 0 12px}
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.words div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+.words b{display:block;font-size:17px;margin-bottom:4px}
+.words span{color:var(--ink);font-size:15px}
+.reply{margin-top:28px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:20px 24px;max-width:760px}
+.reply ol{margin:8px 0 0 20px}
+.reply li{margin:6px 0}
+/* the menu is a "Menu" button at every size: 15 sections never fit one line */
+.top nav{display:none;position:fixed;top:62px;left:0;right:0;flex-direction:column;background:var(--navy);padding:10px 4vw 18px;box-shadow:0 18px 30px rgba(0,0,0,.25);max-height:calc(100vh - 62px);overflow-y:auto}
+.top nav.open{display:flex}.top nav a{font-size:16px;padding:12px 14px}.menu-btn{display:block}
+.top .here{margin-left:auto;font-size:14px;color:#d8dbea;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top .here + .menu-btn{margin-left:0}
+@media(min-width:1001px){.top nav{left:auto;right:4vw;width:340px;border-radius:0 0 16px 16px}}
+@media(max-width:620px){.top .here{display:none}.top .here + .menu-btn{margin-left:auto}}
+@media(max-width:1000px){.words{grid-template-columns:1fr}}
+@media(max-width:620px){.slide{padding:92px 18px 60px}.next{justify-content:stretch}.next a{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<header class="top"><a class="logo" href="#start">Omequel &middot; Website Plan</a><span class="here" id="here"></span><button class="menu-btn" id="menuBtn" aria-expanded="false">Menu</button><nav id="menu"><a href="#today">Where you are</a><a href="#goal">The goal</a><a href="#competition">Competition</a><a href="#buyers">Your buyers</a><a href="#website">The website</a><a href="#listings">Your listings</a><a href="#design">The look</a><a href="#plan">How we rank</a><a href="#timeline">Timeline</a><a href="#budget">Cost</a><a href="#needs">What I need</a><a href="#close">Next step</a><a href="#faq">Questions</a><a href="#words">Words</a></nav></header>
+<div class="bar" id="bar"></div>
+
+<!-- 1 COVER -->
+<section id="start" class="slide sea cover">
+  <div class="sun"></div>
+  <svg class="waves" viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="rgba(211,174,52,.18)" d="M0,192L80,181C160,171,320,149,480,160C640,171,800,213,960,213C1120,213,1280,171,1360,149L1440,128V320H0Z"/><path fill="rgba(255,255,255,.08)" d="M0,256L90,240C180,224,360,192,540,197C720,203,900,245,1080,250C1260,256,1350,224,1440,208V320H0Z"/></svg>
+  <div class="wrap">
+    <p class="eyebrow rv">Website &amp; Google Ranking Plan</p>
+    <h1 class="rv">Omequel Santiago<span>Your homes, found first.</span></h1>
+    <p class="lead rv">A website of your own that puts your Dumaguete, Negros Oriental, Cebu and Palawan properties at the top of Google, where buyers, families and OFWs start their search.</p>
+    <div class="prep rv"><div><b>Prepared for</b>Omequel Santiago, CebuFirst Property Specialist</div><div><b>Prepared by</b>Janly Edjec</div><div><b>Date</b>November 2026</div></div>
+    <div class="howto rv"><a class="cta" href="#today">Start reading &darr;</a><small>About 10 minutes. Use the menu at the top to jump to any part.</small></div>
+  </div>
+</section>
+
+<!-- 2 WHERE YOU ARE TODAY -->
+<section id="today" class="slide">
+  <div class="wrap">
+    <p class="eyebrow rv">Where you are today</p>
+    <h2 class="rv">Strong reputation. <span class="gold">No home of your own online.</span></h2>
+    <div class="grid g4 rv" style="margin-top:10px">
+      <div class="card"><div class="stat" data-count="3100">0</div><p>Facebook followers. Your listings live here, but every post sinks down the feed within days.</p></div>
+      <div class="card"><div class="stat">5&#9733;</div><p>Verified CebuFirst profile with 2 five-star reviews and the CFRV Annual Awards 2026.</p></div>
+      <div class="card"><div class="stat" data-count="0">0</div><p>Listings on your CebuFirst agent page ("No listing found") and no website of your own.</p></div>
+      <div class="card"><div class="stat">1</div><p>OFW family from Canada who bought La Prima Tanjay through you, proof that buyers find you from abroad.</p></div>
+    </div>
+    <p class="lead rv" style="margin-top:34px">Buyers don't scroll Facebook to find a lot in Valencia. They <b>Google it</b>. Today, those searches go to Lamudi, Dot Property and other agents. This plan makes them land on <b>you</b>.</p>
+  <div class="simple rv"><div class="i">i</div><div><b class="t">In simple words</b><p>People who are ready to buy search on <b>Google</b>, not Facebook. Right now Google sends them to listing sites and other agents. A website of your own changes that.</p></div></div><div class="next rv"><a href="#goal">Next: The goal <span>&darr;</span></a></div></div>
+</section>
+
+<!-- 3 GOAL / KEYWORDS -->
+<section id="goal" class="slide">
+  <div class="wrap">
+    <p class="eyebrow rv">The goal</p>
+    <h2 class="rv">Rank #1 for the searches that bring buyers</h2>
+    <p class="lead rv" style="margin-bottom:26px">We go after the searches that are easier to win first (exact towns and project names), then climb into the bigger ones. <b>Easier</b> = few agents compete. <b>Hard</b> = big sites like Lamudi are already there.</p>
+    <div class="kw rv">
+      <div class="card"><h3>Dumaguete</h3>
+        <div class="q">house and lot for sale Dumaguete <i class="h">Hard</i></div>
+        <div class="q">house for rent Dumaguete <i class="m">Medium</i></div>
+        <div class="q">lot for sale Dumaguete City <i class="m">Medium</i></div>
+        <div class="q">real estate agent Dumaguete <i class="e">Easier</i></div></div>
+      <div class="card"><h3>Negros Oriental</h3>
+        <div class="q">La Prima Homes Tanjay <i class="e">Easier</i></div>
+        <div class="q">lot for sale Valencia Negros Oriental <i class="e">Easier</i></div>
+        <div class="q">house and lot Sibulan / Bacong <i class="m">Medium</i></div>
+        <div class="q">lot for sale Amlan / Tanjay <i class="e">Easier</i></div></div>
+      <div class="card"><h3>Cebu</h3>
+        <div class="q">house and lot for sale Cebu <i class="h">Hard</i></div>
+        <div class="q">pre-selling condo Cebu <i class="h">Hard</i></div>
+        <div class="q">lot for sale Lapu-Lapu / Mandaue <i class="m">Medium</i></div>
+        <div class="q">[project name] Cebu price <i class="e">Easier</i></div></div>
+      <div class="card"><h3>Palawan</h3>
+        <div class="q">lot for sale Puerto Princesa <i class="m">Medium</i></div>
+        <div class="q">beach lot for sale Palawan <i class="h">Hard</i></div>
+        <div class="q">San Vicente Palawan lot <i class="m">Medium</i></div>
+        <div class="q">[project name] Palawan <i class="e">Easier</i></div></div>
+    </div>
+    <p class="note rv">Today, searches like "lot for sale Valencia" show mostly listing sites (Dot Property, Trovit, Lamudi), with very few local agents. That's the opening: we beat them with real local area and project pages they don't have. Before we start, we agree on the exact 5 searches that count as "page 1".</p>
+  <div class="simple rv"><div class="i">i</div><div><b class="t">In simple words</b><p><b>Rank #1</b> means your website is the first result on Google for that search. <b>Page 1</b> means it's in the top 10 results. Before we start, we agree on the exact 5 searches together, so we both know when the goal is reached.</p></div></div><div class="next rv"><a href="#competition">Next: Competition <span>&darr;</span></a></div></div>
+</section>
+
+<!-- 3b COMPETITORS -->
+<section id="competition" class="slide">
+  <div class="wrap">
+    <p class="eyebrow rv">Your competition</p>
+    <h2 class="rv">Who's on Google today, <span class="gold">and how we beat them</span></h2>
+    <div class="grid g2 rv" style="gap:26px;align-items:start">
+      <div class="grid" style="gap:14px">
+        <div class="card" style="padding:20px 22px"><span class="tag hard">Big listing sites</span><h3 style="font-size:23px">Dot Property, Lamudi, Trovit, MyProperty</h3><p style="font-size:15px"><b>Strong:</b> thousands of listings, Google already trusts them.<br><b>Weak:</b> generic copy-paste ads, the same property posted many times, no local guidance, and the buyer ends up with a random agent.</p></div>
+        <div class="card" style="padding:20px 22px"><span class="tag med">Local brokerages</span><h3 style="font-size:23px">J.T. Lacson Realty and other Dumaguete agencies</h3><p style="font-size:15px"><b>Strong:</b> licensed, many listings, also sell La Prima Tanjay.<br><b>Weak:</b> they rely on the listing sites, with few local area pages of their own.</p></div>
+        <div class="card" style="padding:20px 22px"><span class="tag">Other agents</span><h3 style="font-size:23px">Agents who post only on Facebook</h3><p style="font-size:15px"><b>Weak:</b> their posts disappear from feeds and never show on Google. Same problem you have today.</p></div>
+      </div>
+      <div class="card" style="background:var(--navy);color:#fff;border:0;padding:30px">
+        <p class="eyebrow">Our plan to beat them</p>
+        <ul class="clean" style="margin-top:12px">
+          <li><b>Win where they're weak.</b> A page for every town, barangay and project (Valencia, Bong-ao, Tanjay, La Prima). The listing sites don't have these.</li>
+          <li><b>Your pin on Google Maps.</b> Listing sites can't appear on the map as a Dumaguete agent. You can, with your reviews.</li>
+          <li><b>Real photos, real videos, a real person.</b> Your own property videos and fast replies on Messenger, Viber and WhatsApp beat copy-paste ads.</li>
+          <li><b>Guides nobody else writes.</b> Buying from abroad, Pag-IBIG, titles, living in Valencia. These rank and bring OFWs.</li>
+          <li><b>Start where it's easiest.</b> Negros Oriental first, where competition is weakest. Then Cebu projects and Palawan once we have your listings there.</li>
+        </ul>
+      </div>
+    </div>
+  <div class="simple rv"><div class="i">i</div><div><b class="t">In simple words</b><p>When someone searches "real estate agent Dumaguete", Google shows a map with 3 local agents on top. Listing sites like Lamudi can't be in that spot. <b>You can</b>, because you're really here in Dumaguete.</p></div></div><div class="next rv"><a href="#buyers">Next: Your buyers <span>&darr;</span></a></div></div>
+</section>
+
+<!-- 4 WHO WE'RE BUILDING FOR -->
+<section id="buyers" class="slide dark">
+  <div class="wrap">
+    <p class="eyebrow rv">Who the website speaks to</p>
+    <h2 class="rv">Four buyers, one place to decide</h2>
+    <div class="grid g4 rv">
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/><circle cx="12" cy="12" r="10"/></svg></div><h3>OFWs abroad</h3><p>Buy from Canada, the Middle East or anywhere: video tours, SPA guide, Pag-IBIG steps, Messenger &amp; WhatsApp.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v10H3z"/><path d="M9 21v-6h6v6"/></svg></div><h3>Local families</h3><p>First homes like La Prima Tanjay: clear monthly equity, reservation fee and financing explained.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div><h3>Retirees &amp; expats</h3><p>Dumaguete is a top retirement city: houses, rentals and quiet lots in Valencia and Sibulan.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div><h3>Investors</h3><p>Rush-sale lots, Cebu pre-selling and Palawan land, with clean titles and honest numbers.</p></div>
+    </div>
+  <div class="simple rv"><div class="i">i</div><div><b class="t">In simple words</b><p>Think about which of these four buy from you the most. That's what goes first on your homepage.</p></div></div><div class="next rv"><a href="#website">Next: The website <span>&darr;</span></a></div></div>
+</section>
+
+<!-- 5 SITEMAP -->
+<section id="website" class="slide">
+  <div class="wrap">
+    <p class="eyebrow rv">What the website will show</p>
+    <h2 class="rv">Every page has a job: <span class="gold">get found, then get a viewing</span></h2>
+    <div class="tree rv">
+      <div class="node home-node"><h4>Home</h4><p>Featured properties &middot; search by area, type &amp; price &middot; "Book a viewing" everywhere</p></div>
+      <div class="node"><h4>Properties</h4><p>All listings with filters. One page per property with photos, video, price, map and inquiry button.</p></div>
+      <div class="node"><h4>Area pages</h4><p>Dumaguete &middot; Valencia &middot; Sibulan &amp; Bacong &middot; Tanjay &middot; Amlan &middot; Cebu &middot; Palawan. These win the area searches.</p></div>
+      <div class="node"><h4>Project pages</h4><p>La Prima Homes Tanjay first, then every project you sell, with price, payment terms and site photos.</p></div>
+      <div class="node"><h4>Rentals &amp; Rush Sale</h4><p>Furnished rentals and below-market deals, updated weekly from your Facebook posts.</p></div>
+      <div class="node"><h4>OFW &amp; Buyer Guides</h4><p>How to buy from abroad, Pag-IBIG financing, titles, taxes. These rank and build trust.</p></div>
+      <div class="node"><h4>Sold &amp; Reviews</h4><p>Happy clients like the La Prima family from Canada. Social proof Google and buyers love.</p></div>
+      <div class="node"><h4>About you</h4><p>Accredited Salesperson under CebuFirst Realty Ventures. Languages: Bisaya, Tagalog, English, Ilonggo.</p></div>
+      <div class="node"><h4>Contact &amp; Viewing</h4><p>Call, Viber, WhatsApp, Messenger and a viewing form that goes straight to your phone and email.</p></div>
+      <div class="node"><h4>Blog</h4><p>2 local articles a month: "Living in Valencia", "Dumaguete for retirees" and more.</p></div>
+    </div>
+  <div class="simple rv"><div class="i">i</div><div><b class="t">In simple words</b><p>Google ranks <b>pages</b>, not whole websites. A page made just for "lot for sale Valencia" beats one big page that tries to cover everything. That's why your site has a page for every town, project and property.</p></div></div><div class="next rv"><a href="#listings">Next: Your listings <span>&darr;</span></a></div></div>
+</section>
+
+<!-- 6 FEATURED PROPERTIES -->
+<section id="listings" class="slide">
+  <div class="wrap">
+    <p class="eyebrow rv">Your listings, presented properly</p>
+    <h2 class="rv">From Facebook posts to pages that rank</h2>
+    <div class="grid g4 rv">
+      <div class="card prop"><div class="ph"><svg viewBox="0 0 300 150"><path d="M0 120 L300 120 L300 150 L0 150Z" fill="#2A5B2C" opacity=".7"/><rect x="40" y="70" width="90" height="50" fill="none" stroke="#E5C862" stroke-width="2" stroke-dasharray="6 5"/></svg><span class="badge">Rush Sale</span></div><div class="bd"><div class="price">₱800,000</div><p class="meta">Lot &middot; 117 sqm &middot; clean title<br>Valencia, Negros Oriental &middot; walking distance to the plaza</p></div></div>
+      <div class="card prop"><div class="ph"><svg viewBox="0 0 300 150"><path d="M70 120 V75 L130 40 L190 75 V120Z" fill="#faf7ef" opacity=".9"/><rect x="115" y="90" width="30" height="30" fill="#0B1335"/><path d="M0 120 H300 V150 H0Z" fill="#2A5B2C" opacity=".7"/></svg><span class="badge">Brand New</span></div><div class="bd"><div class="price">₱8,900,000</div><p class="meta">House &amp; lot &middot; 300 sqm lot &middot; 3BR / 3BA &middot; fully furnished<br>Bong-ao, Valencia</p></div></div>
+      <div class="card prop"><div class="ph"><svg viewBox="0 0 300 150"><path d="M60 120 V80 L120 50 L180 80 V120Z" fill="#faf7ef" opacity=".85"/><path d="M0 120 H300 V150 H0Z" fill="#2f8f9d" opacity=".7"/><circle cx="240" cy="45" r="18" fill="#E5C862" opacity=".8"/></svg><span class="badge">For Rent</span></div><div class="bd"><div class="price">₱35,000<small style="font-size:16px">/mo</small></div><p class="meta">3BR furnished house &middot; wide fenced lawn<br>Dumaguete area &middot; 1-year lease</p></div></div>
+      <div class="card prop"><div class="ph"><svg viewBox="0 0 300 150"><g fill="#faf7ef" opacity=".9"><path d="M30 120V80L60 62L90 80V120Z"/><path d="M95 120V80L125 62L155 80V120Z"/><path d="M160 120V80L190 62L220 80V120Z"/><path d="M225 120V80L255 62L285 80V120Z"/></g><path d="M0 120H300V150H0Z" fill="#2A5B2C" opacity=".7"/></svg><span class="badge">Pre-selling</span></div><div class="bd"><div class="price">from ₱1.5M</div><p class="meta">La Prima Homes Tanjay by Primary Homes &middot; 2BR townhouse<br>₱10,000 reservation &middot; Pag-IBIG or bank</p></div></div>
+    </div>
+    <p class="note rv">Each listing gets its own page with photos, video, map and price, so "lot for sale Valencia" or "La Prima Tanjay price" leads straight to you.</p>
+  <div class="simple rv"><div class="i">i</div><div><b class="t">In simple words</b><p>On Facebook a post is gone from people's feeds in a few days. On your website every property stays up and can be found on Google any time. Your Cebu and Palawan listings go here too once you send them.</p></div></div><div class="next rv"><a href="#design">Next: The look <span>&darr;</span></a></div></div>
+</section>
+
+<!-- 7 DESIGN DIRECTION -->
+<section id="design" class="slide sea">
+  <div class="wrap grid g2" style="align-items:center;gap:60px">
+    <div>
+      <p class="eyebrow rv">Design direction</p>
+      <h2 class="rv">CebuFirst's colors, <span style="font-style:italic;color:var(--gold2)">a calmer coastal feel</span></h2>
+      <p class="lead rv">Same navy and gold trust as CebuFirst, opened up with sea tones inspired by Rizal Boulevard: big property photos, clean search, and a "Book a viewing" button that is always one tap away on mobile.</p>
+      <div class="swatch rv"><div style="background:#0B1335;color:#fff">Navy</div><div style="background:#D3AE34;color:#0B1335">Gold</div><div style="background:#2f8f9d;color:#fff">Sea</div><div style="background:#faf7ef;color:#0B1335">Sand</div><div style="background:#2A5B2C;color:#fff">Palm</div></div>
+    </div>
+    <div class="rv">
+      <div class="mock">
+        <div class="chrome"><i></i><i></i><i></i></div>
+        <div class="hero"><small>Dumaguete &middot; Negros Oriental &middot; Cebu &middot; Palawan</small><b>Find a home that feels right.</b></div>
+        <div class="search"><span>Area</span><span>Type</span><span>Budget</span><em>Search</em></div>
+        <div class="row"><div></div><div></div><div></div></div>
+      </div>
+    </div>
+  <div class="simple rv"><div class="i">i</div><div><b class="t">In simple words</b><p>Most buyers, especially OFWs, will visit on their phone, so the site is designed for phones first. The "Book a viewing" button is always one tap away.</p></div></div><div class="next rv"><a href="#plan">Next: How we rank <span>&darr;</span></a></div></div>
+</section>
+
+<!-- 8 SEO PLAN -->
+<section id="plan" class="slide">
+  <div class="wrap">
+    <p class="eyebrow rv">How we get to #1</p>
+    <h2 class="rv">The ranking plan</h2>
+    <div class="grid g3 rv">
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div><h3>Pages Google can rank</h3><p>One page per area, project and property, each written for the exact search buyers type. Fast and mobile-first.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>Your pin on Google Maps</h3><p>A free Google Business Profile for you as a real estate agent in Dumaguete, so you show up on the map with your reviews and number.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div><h3>Reviews</h3><p>Ask every happy client for a Google review. Reviews push rankings and close the next buyer.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg></div><h3>Your accounts point to the site</h3><p>Your Facebook, Instagram, CebuFirst agent page and Lamudi listings all link to your website. Google sees that as a vote of trust.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H5l-1 4z"/></svg></div><h3>Fresh content</h3><p>New listings weekly and 2 local guides a month. Google rewards sites that stay active.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><h3>Track &amp; report</h3><p>Google's free tools show which searches bring people to your site. You get a monthly update on where each target search ranks.</p></div>
+    </div>
+  <div class="simple rv"><div class="i">i</div><div><b class="t">In simple words</b><p>Your part is simple: send new listings, ask happy clients for a Google review, and share your website link in your posts. I handle the rest.</p></div></div><div class="next rv"><a href="#timeline">Next: Timeline <span>&darr;</span></a></div></div>
+</section>
+
+<!-- 9 TIMELINE -->
+<section id="timeline" class="slide dark">
+  <div class="wrap">
+    <p class="eyebrow rv">Timeframe</p>
+    <h2 class="rv">From kickoff to page 1</h2>
+    <div class="tl rv"><div class="fill"></div>
+      <div class="steps">
+        <div class="step"><div class="dot">1</div><b>Days 1&ndash;2</b><h3>Kickoff</h3><p>Website address and server, then your listings, photos, logo and story.</p></div>
+        <div class="step"><div class="dot">2</div><b>Days 3&ndash;5</b><h3>Design &amp; build</h3><p>Pages, property search, listing pages, mobile version.</p></div>
+        <div class="step"><div class="dot">3</div><b>Days 6&ndash;7</b><h3>Launch</h3><p>Area &amp; project pages, connect to Google, go live. Website done in 1 week.</p></div>
+        <div class="step"><div class="dot">4</div><b>Weeks 2&ndash;8</b><h3>First rankings</h3><p>Google Maps pin, reviews, guides. Project and town searches start showing.</p></div>
+        <div class="step"><div class="dot">5</div><b>Months 2&ndash;6</b><h3>Page 1</h3><p>Area pages climb. Target: page 1 for the 5 agreed searches.</p></div>
+      </div>
+    </div>
+    <p class="note rv" style="margin-top:34px">The website is fast to build. Ranking is not: Google needs time to find and trust a new site, so no one can promise an exact date. Easier searches usually move in 1&ndash;3 months, harder ones take 3&ndash;6 months or more.</p>
+  <div class="simple rv"><div class="i">i</div><div><b class="t">In simple words</b><p>The website takes about <b>1 week</b> once I have your photos. Getting on Google takes longer, because Google needs time to find and trust a new website.</p></div></div><div class="next rv"><a href="#budget">Next: Cost <span>&darr;</span></a></div></div>
+</section>
+
+<!-- 10 BUDGET -->
+<section id="budget" class="slide">
+  <div class="wrap">
+    <p class="eyebrow rv">Budget</p>
+    <h2 class="rv">What it costs</h2>
+    <div class="price-table rv">
+      <div class="pt-row head"><div>Item</div><div>What it covers</div><div style="text-align:right">Amount</div></div>
+      <div class="pt-row"><div><b>Website &amp; SEO</b><small>Janly Edjec</small></div><div>Design and build, every area, project and listing page, your Google Maps profile, and the work to get you to page 1</div><div class="amt">₱6,000</div></div>
+      <div class="pt-row"><div><b>Domain</b><small>yearly</small></div><div>Your website address, e.g. omequelsantiago.com. A .ph address costs more, around ₱1,500&ndash;2,500</div><div class="amt">~₱800</div></div>
+      <div class="pt-row"><div><b>Hosting</b><small>yearly</small></div><div>The server that keeps your website online 24/7, with the secure padlock and an email like you@omequelsantiago.com (first-year promo price)</div><div class="amt">~₱3,500</div></div>
+      <div class="pt-row total"><div><b>First-year total</b></div><div>Domain and hosting are paid directly to the provider in your name, so you own them</div><div class="amt">~₱10,300</div></div>
+    </div>
+    <div class="pay rv">
+      <div class="card"><p class="eyebrow">Downpayment</p><div class="big">₱3,000</div><p>To start the project (kickoff, design and build).</p></div>
+      <div class="card"><p class="eyebrow">When the site reaches page 1</p><div class="big">₱3,000</div><p>Paid once the website shows on Google page 1 for the agreed target searches.</p></div>
+    </div>
+    <p class="note rv">Domain and hosting prices are approximate and change with promos; renewals are usually higher than the first year.</p>
+  <div class="simple rv"><div class="i">i</div><div><b class="t">In simple words</b><p><b>Domain</b> = your website address. <b>Hosting</b> = the computer that keeps it online 24/7. Both are paid to the provider in your name, so you own them. And you only pay the second ₱3,000 once it works.</p></div></div><div class="next rv"><a href="#needs">Next: What I need <span>&darr;</span></a></div></div>
+</section>
+
+<!-- 11 NEEDS & COMPLIANCE -->
+<section id="needs" class="slide">
+  <div class="wrap grid g2" style="gap:50px">
+    <div>
+      <p class="eyebrow rv">What I need from you</p>
+      <h2 class="rv">To start on day 1</h2>
+      <ul class="clean rv">
+        <li>Photos and videos of every listing (the ones on Facebook are perfect). The faster these arrive, the faster we launch.</li>
+        <li>A professional headshot and a short "about me"</li>
+        <li>The list of projects you sell in Cebu and Palawan</li>
+        <li>3&ndash;5 clients willing to leave a Google review</li>
+        <li>A Google account for your Google Maps profile</li>
+        <li>CebuFirst's OK to use their name and logo on the site</li>
+      </ul>
+    </div>
+    <div class="card rv" style="align-self:center;border-left:5px solid var(--gold)">
+      <p class="eyebrow">Doing it the right way</p>
+      <h3 style="margin-top:10px">Built to follow the real estate law (RESA)</h3>
+      <p>Under the law, salespersons sell under a licensed broker. So every page will show that you are an <b>Accredited Salesperson under CebuFirst Realty Ventures</b>, with its PRC-licensed broker. That keeps the website legal, builds buyer trust, and is ready for when you get your own broker license.</p>
+    </div>
+  <div class="simple rv"><div class="i">i</div><div><b class="t">In simple words</b><p><b>RESA</b> is the Real Estate Service Act. Salespersons sell under a licensed broker, so your website shows you're under CebuFirst. That keeps you safe.</p></div></div><div class="next rv"><a href="#faq">Next: Your questions, answered <span>&darr;</span></a></div></div>
+</section>
+
+<!-- 12 CLOSE -->
+<section id="faq" class="slide faq"><div class="wrap"><p class="eyebrow rv">Your questions</p><h2 class="rv">Questions you might have</h2><p class="lead rv">Tap a question to see the answer.</p><h3 class="rv">About ranking</h3><details class="rv"><summary>Can you guarantee #1?</summary><p>No one honestly can, because Google decides. What I guarantee is the work and the plan. That's why the second ₱3,000 only comes when the site reaches page 1. You only pay the second half if it works.</p></details><details class="rv"><summary>Can I really compete in Dumaguete, Cebu and Palawan?</summary><p>In Dumaguete and Negros Oriental, yes. When you search "house and lot for sale Dumaguete" or "lot for sale Valencia", the top results are mostly listing sites like Dot Property, Trovit and Lamudi, not local agents with their own websites, so the local spots are open. Town and project searches like "lot for sale Bong-ao Valencia" or "La Prima Homes Tanjay" are very winnable, and your Google Maps pin helps because you're here in Dumaguete. Cebu is the hardest because there are many brokers and developers, so we go for specific projects and towns there. Palawan is in between, but we need your Palawan listings first. So we focus the 5 target searches on Negros Oriental first.</p></details><details class="rv"><summary>Who is my competition?</summary><p>Mostly the big listing sites, plus local brokerages like J.T. Lacson Realty, which also sells La Prima Tanjay. Your advantage: those sites have thousands of generic pages. Yours will have real local pages, your own photos, reviews and a real person to message.</p></details><details class="rv"><summary>How long until I see results?</summary><p>The website is done in about a week. Town and project searches usually show in 1 to 3 months, the bigger searches 3 to 6 months. And once you share the link on Facebook, you get visitors from day one.</p></details><details class="rv"><summary>What if it never reaches page 1?</summary><p>Then you don't pay the second ₱3,000, and you still keep the website, the domain and everything we built.</p></details><details class="rv"><summary>How will I know where I rank?</summary><p>I'll send you a monthly update from Google's free tools showing where each target search ranks. You can also check it yourself in an incognito window.</p></details><h3 class="rv">About money</h3><details class="rv"><summary>Why do I still pay for domain and hosting?</summary><p>Those are paid to the companies that provide them, not to me. It's like paying rent for a store and its sign. They're in your name, so you own them even if I stop working on it.</p></details><details class="rv"><summary>Is there a monthly fee after this?</summary><p>No. The ₱6,000 covers building the site and the work to reach page 1. Only the domain and hosting renew yearly. If you want me to keep adding listings and blogs long term, we can agree on that separately later.</p></details><details class="rv"><summary>Can I pay in installments?</summary><p>It's already split in two: ₱3,000 to start and ₱3,000 when it ranks.</p></details><details class="rv"><summary>Why is it so cheap compared to agencies?</summary><p>Because you're my friend, and I'm building my portfolio in real estate SEO. The quality of the work is the same.</p></details><h3 class="rv">About the website</h3><details class="rv"><summary>Who owns the website?</summary><p>You do. The domain and hosting are in your name, and the site is yours.</p></details><details class="rv"><summary>Can I update listings myself?</summary><p>Yes. I'll show you how to add a property, or you can just send me the post and I'll add it.</p></details><details class="rv"><summary>Why not just keep posting on Facebook?</summary><p>Keep posting, and link every post to the website. Facebook reaches people who already follow you. Google reaches people who don't know you yet but are ready to buy.</p></details><details class="rv"><summary>Isn't the CebuFirst website enough?</summary><p>Your agent page there shows no listings, and the site promotes all of CebuFirst. Your own site builds your name, and buyers talk to you directly.</p></details><details class="rv"><summary>Is it OK with CebuFirst?</summary><p>That's why the site shows you're an accredited salesperson under CebuFirst, and why we'll ask CebuFirst's OK to use their name and logo. Brokerages usually like agents who bring in their own leads.</p></details><details class="rv"><summary>What if I get my broker license later, or move to another brokerage?</summary><p>The website is under your own name, so it moves with you. We just update the "under CebuFirst" line.</p></details><details class="rv"><summary>How do buyers contact me?</summary><p>By call, Viber, WhatsApp, Messenger or the viewing form. All of them go straight to your phone and email.</p></details><details class="rv"><summary>Can I see it before it goes live?</summary><p>Yes. I'll show you the site on a preview link before launch, and you approve it first.</p></details><div class="next rv"><a href="#words">Next: Words explained <span>&darr;</span></a></div></div></section>
+<section id="words" class="slide"><div class="wrap"><p class="eyebrow rv">Words explained</p><h2 class="rv">If a word was new</h2><div class="words rv"><div><b>SEO</b><span>Making a website easy for Google to understand and trust, so it shows higher in search results.</span></div><div><b>Search / keyword</b><span>The words people type into Google, like "lot for sale Valencia Negros Oriental".</span></div><div><b>Ranking</b><span>Where your website appears in Google's results. #1 is the top result.</span></div><div><b>Page 1</b><span>The first 10 results. Most people never click past page 1.</span></div><div><b>Domain</b><span>Your website address, like omequelsantiago.com.</span></div><div><b>Hosting</b><span>The rented computer where your website lives, so anyone can open it 24/7.</span></div><div><b>Google Maps pin (Business Profile)</b><span>Your free listing on Google Maps and Search, with your reviews, number and website.</span></div><div><b>Mobile-first</b><span>Designed for phones first, since most buyers browse on their phone.</span></div><div><b>Pre-selling / RFO</b><span>Pre-selling = bought before it's built (cheaper, longer wait). RFO = ready for occupancy.</span></div><div><b>RESA</b><span>The Real Estate Service Act. Salespersons sell under a licensed broker.</span></div></div><div class="next rv"><a href="#close">Next: The next step <span>&darr;</span></a></div></div></section>
+<section id="close" class="slide sea cover">
+  <div class="sun" style="top:auto;bottom:-10vh;right:-5vw"></div>
+  <div class="wrap">
+    <p class="eyebrow rv">Next step</p>
+    <h1 class="rv" style="font-size:clamp(42px,6vw,82px)">Let's put your properties<span>at the top of Google.</span></h1>
+    <p class="lead rv">Approve the plan, agree on the 5 target searches, and we start with the ₱3,000 downpayment. The website can be live in about 1 week.</p>
+    <div class="reply rv"><b>To start, just message me:</b><ol><li>That you're good with the plan.</li><li>The 5 searches you want to win first (or let me pick them with you).</li><li>Your listing photos and videos, and the ₱3,000 downpayment.</li></ol></div><div class="howto rv"><a class="cta" href="#start">Back to the top &uarr;</a></div>
+  </div>
+</section>
+
+<script>
+(()=>{
+  const secs=[...document.querySelectorAll('section.slide')], bar=document.getElementById('bar');
+  const links=[...document.querySelectorAll('#menu a')], menu=document.getElementById('menu'), btn=document.getElementById('menuBtn');
+  btn.addEventListener('click',()=>{const o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'Close':'Menu'});
+  links.forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');btn.setAttribute('aria-expanded',false);btn.textContent='Menu'}));
+  const count=el=>{const end=+el.dataset.count;if(!end){el.textContent='0';return}const t0=performance.now();const tick=t=>{const p=Math.min((t-t0)/1400,1);el.textContent=Math.round(end*(1-Math.pow(1-p,3))).toLocaleString()+(end>=1000&&p===1?'+':'');if(p<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)};
+  const reveal=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(c=>{if(!c.dataset.done){c.dataset.done=1;count(c)}})}}),{threshold:.08});
+  secs.forEach(s=>reveal.observe(s));
+  const onScroll=()=>{const y=scrollY+innerHeight*.35;let cur=secs[0];secs.forEach(s=>{if(s.offsetTop<=y)cur=s});
+    let label='';links.forEach(a=>{const on=a.getAttribute('href')==='#'+cur.id;a.classList.toggle('on',on);if(on)label=a.textContent});
+    const i=secs.indexOf(cur);document.getElementById('here').textContent=label?('You are on: '+label+'  ('+i+' of '+(secs.length-1)+')'):'';
+    const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=(max>0?scrollY/max*100:0)+'%'};
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+</script>
+</body>
+</html>
